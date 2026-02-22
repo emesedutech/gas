@@ -5,127 +5,70 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Emes CBT</title>
 
-  <!-- Favicon & Logo -->
+  <!-- Favicon -->
   <link rel="icon" type="image/png" href="https://i.imgur.com/Y9y66MG.png" />
   <link rel="apple-touch-icon" href="https://i.imgur.com/Y9y66MG.png" />
 
-  <!-- PWA Meta -->
+  <!-- PWA -->
   <meta name="theme-color" content="#10b981" />
-  <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-  <meta name="apple-mobile-web-app-title" content="Emes CBT" />
-
-  <!-- Manifest -->
   <link rel="manifest" href="manifest.json" />
 
   <style>
-    :root {
-      --emerald: #10b981;
-      --emerald-dark: #059669;
-      --bg: #f0fdf4;
-      --text: #064e3b;
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
-    }
-
     body {
-      background: var(--bg);
-      display: flex;
-      flex-direction: column;
+      margin: 0;
       height: 100vh;
-    }
-
-    header {
-      background: var(--emerald);
-      color: white;
       display: flex;
+      justify-content: center;
       align-items: center;
-      padding: 12px 20px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    }
-
-    header img {
-      height: 40px;
-      margin-right: 12px;
-    }
-
-    header h1 {
-      font-size: 18px;
-      font-weight: 600;
-    }
-
-    main {
-      flex: 1;
-      padding: 20px;
-    }
-
-    .app-container {
-      background: white;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-      overflow: hidden;
-      height: 100%;
-      border: 1px solid #d1fae5;
-    }
-
-    iframe {
-      width: 100%;
-      height: 100%;
-      border: none;
-    }
-
-    footer {
+      background: linear-gradient(135deg, #10b981, #059669);
+      font-family: system-ui, sans-serif;
+      color: white;
       text-align: center;
-      padding: 8px;
-      font-size: 12px;
-      background: #ecfdf5;
-      color: var(--text);
     }
 
-    @media (max-width: 768px) {
-      header h1 {
-        font-size: 16px;
-      }
-      main {
-        padding: 10px;
-      }
+    .loader {
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    .loader img {
+      width: 100px;
+      margin-bottom: 20px;
+    }
+
+    .spinner {
+      width: 40px;
+      height: 40px;
+      border: 4px solid rgba(255,255,255,0.3);
+      border-top: 4px solid white;
+      border-radius: 50%;
+      margin: 20px auto;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      100% { transform: rotate(360deg); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
   </style>
+
+  <script>
+    // Redirect otomatis setelah 1 detik
+    setTimeout(function() {
+      window.location.href = "https://script.google.com/macros/s/AKfycbx_4C7OiPN6W1G5arIuaBhGGNC_cHOk0jmoPXHyC7xICXvzFw5hu0V34cS8WBya53bFQQ/exec";
+    }, 1000);
+  </script>
 </head>
 <body>
 
-  <header>
-    <img src="https://i.imgur.com/Y9y66MG.png" alt="Logo" />
-    <h1>Emes CBT</h1>
-  </header>
-
-  <main>
-    <div class="app-container">
-      <iframe 
-        src="https://script.google.com/macros/s/AKfycbx_4C7OiPN6W1G5arIuaBhGGNC_cHOk0jmoPXHyC7xICXvzFw5hu0V34cS8WBya53bFQQ/exec" 
-        allow="fullscreen"
-      ></iframe>
-    </div>
-  </main>
-
-  <footer>
-    © 2026 Emes CBT System
-  </footer>
-
-  <!-- Register Service Worker -->
-  <script>
-    if ("serviceWorker" in navigator) {
-      window.addEventListener("load", function () {
-        navigator.serviceWorker.register("service-worker.js")
-          .then(() => console.log("Service Worker Registered"));
-      });
-    }
-  </script>
+  <div class="loader">
+    <img src="https://i.imgur.com/Y9y66MG.png" alt="Logo">
+    <h2>Memuat Emes CBT...</h2>
+    <div class="spinner"></div>
+  </div>
 
 </body>
 </html>
