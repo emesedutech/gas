@@ -1,74 +1,42 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Emes CBT</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Emes CBT</title>
 
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="https://i.imgur.com/Y9y66MG.png" />
-  <link rel="apple-touch-icon" href="https://i.imgur.com/Y9y66MG.png" />
+<link rel="icon" type="image/png" href="https://i.imgur.com/Y9y66MG.png">
+<link rel="apple-touch-icon" href="https://i.imgur.com/Y9y66MG.png">
+<meta name="theme-color" content="#10b981">
 
-  <!-- PWA -->
-  <meta name="theme-color" content="#10b981" />
-  <link rel="manifest" href="manifest.json" />
+<style>
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background: #10b981;
+  overflow: hidden;
+}
 
-  <style>
-    body {
-      margin: 0;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background: linear-gradient(135deg, #10b981, #059669);
-      font-family: system-ui, sans-serif;
-      color: white;
-      text-align: center;
-    }
-
-    .loader {
-      animation: fadeIn 1s ease-in-out;
-    }
-
-    .loader img {
-      width: 100px;
-      margin-bottom: 20px;
-    }
-
-    .spinner {
-      width: 40px;
-      height: 40px;
-      border: 4px solid rgba(255,255,255,0.3);
-      border-top: 4px solid white;
-      border-radius: 50%;
-      margin: 20px auto;
-      animation: spin 1s linear infinite;
-    }
-
-    @keyframes spin {
-      100% { transform: rotate(360deg); }
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-  </style>
-
-  <script>
-    // Redirect otomatis setelah 1 detik
-    setTimeout(function() {
-      window.location.href = "https://script.google.com/macros/s/AKfycbx_4C7OiPN6W1G5arIuaBhGGNC_cHOk0jmoPXHyC7xICXvzFw5hu0V34cS8WBya53bFQQ/exec";
-    }, 1000);
-  </script>
+iframe {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  border: none;
+  background: white;
+}
+</style>
 </head>
+
 <body>
 
-  <div class="loader">
-    <img src="https://i.imgur.com/Y9y66MG.png" alt="Logo">
-    <h2>Memuat Emes CBT...</h2>
-    <div class="spinner"></div>
-  </div>
+<iframe 
+  src="https://script.google.com/macros/s/AKfycbx_4C7OiPN6W1G5arIuaBhGGNC_cHOk0jmoPXHyC7xICXvzFw5hu0V34cS8WBya53bFQQ/exec"
+  allow="fullscreen"
+  allowfullscreen
+></iframe>
 
 </body>
 </html>
